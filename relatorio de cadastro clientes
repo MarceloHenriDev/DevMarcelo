@@ -1,0 +1,10 @@
+select 
+a.codcli,
+a.cliente Nome,
+a.endercob Endereco,
+a.telcob Telefone
+from pcclient a
+where a.dtcadastro between '01-jan-2020' and '01-oct-2022'
+order by
+a.codcli,
+a.cliente
