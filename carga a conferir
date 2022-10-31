@@ -1,0 +1,14 @@
+select
+a.numcar as carga,
+count(c.qt) as qtdeitens,
+count(DISTINCT(a.numped)) as qtpedidos
+from pcpedc a, pccarreg b, pcpedi c
+where a.numcar = b.numcar
+and a.numped = c.numped
+and b.numcar = c.numcar
+and a.dtinicialcheckout is  null
+and a.dtfinalcheckout is NULL
+and a.posicao in ('M')
+group by 
+a.numcar
+order by a.numcar asc
