@@ -1,0 +1,19 @@
+select 
+a.codprod,
+a.descricao,
+b.qtestger,
+b.qtreserv,
+a.qttotpal,
+a.codsec,
+a.codepto
+
+from pcprodut a, pcest b
+where a.codprod=b.codprod
+and a.codprod between '1' and '220'
+and a.codsec between '10003' and '10018'
+and a.codepto between '1' and '10005'
+
+
+
+order by 
+a.codprod 
