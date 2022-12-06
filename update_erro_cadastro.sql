@@ -3,4 +3,4 @@ where tipofj='F' and (cgcent like '%111%' or cgcent like '%222%' or cgcent like 
 and condvenda5='S'
 
 
---10 cadastros errados :(
+--fazer update de vez em quando!!!
