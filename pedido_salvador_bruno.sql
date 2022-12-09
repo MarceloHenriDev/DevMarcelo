@@ -7,4 +7,6 @@ a.numcupom,
 a.tipodocumento,
 a.condvenda
 from pcpedc a
-where a.numcar = 125701
+--where a.numcar = 125701
+ where data = trunc(sysdate)
+
