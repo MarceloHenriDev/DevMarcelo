@@ -1,0 +1,92 @@
+select
+b.codusur,
+d.nome,
+c.codprod,
+c.descricao,
+a.qt,
+b.numped,
+a.pvenda,
+sum(a.qt*a.pvenda)vltotal,
+trunc(a.percom) percom,
+(round(sum(a.qt*a.pvenda/100*a.percom),2))vlcomissao
+--(round(sum(a.pvenda*f.numnota/100*a.percom),2))vlcomissao
+from pcpedi a, pcpedc b, pcprodut c, pcusuari d, pcclient e, pcnfsaid f 
+where a.numped=b.numped 
+and a.codprod=c.codprod 
+and b.codusur = d.codusur 
+and b.codcli = e.codcli
+and f.codcli = b.codcli
+--and b.numped = 2200004161
+and b.data = trunc(sysdate)
+group by 
+b.codusur,
+d.nome,
+c.codprod,
+c.descricao,
+a.qt,
+b.numped,
+a.pvenda,
+a.percom
+
+ORDER BY NUMPED DESC
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+select
+b.codusur,
+d.nome,
+c.codprod,
+c.descricao,
+a.qt,
+b.numped,
+a.pvenda,
+sum(a.qt*a.pvenda)vltotal,
+trunc(a.percom) percom,
+(round(sum(a.qt*a.pvenda/100*a.percom),2))vlcomissao
+--,
+--sum (b.numped*b.vlatend)/100*a.percom aa
+--sum((b.numped*a.percom)/100)comiss
+
+from pcpedi a, pcpedc b, pcprodut c, pcusuari d, pcclient e 
+
+where a.numped=b.numped 
+and a.codprod=c.codprod 
+and b.codusur = d.codusur 
+and b.codcli = e.codcli
+--and b.numped = 2200004161
+and b.data = trunc(sysdate)
+--between '23-jan-2020' and '23-jan-2020'
+
+group by 
+b.codusur,
+d.nome,
+c.codprod,
+c.descricao,
+a.qt,
+b.numped,
+a.pvenda,
+
+a.percom
+
+
+order by numped desc
+
+
+
+
+
+
+
